@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Quote Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: url('/Users/csun/Documents/different-shapes-clouds-sky.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #ffffff;
+        }
+        .quote-box {
+            text-align: center;
+            padding: 20px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 10px;
+            max-width: 500px;
+            background-color: rgba(0, 0, 0, 0.5);
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+        }
+        .quote {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+        .author {
+            font-size: 1em;
+            color: #cccccc;
+        }
+    </style>
+</head>
+<body>
+    <div class="quote-box">
+        <div id="quote" class="quote"></div>
+        <div id="author" class="author"></div>
+    </div>
+
+    <script>
+        const quotes = [
+{ text: "Embrace each day with gratitude and a hopeful heart.", author: "LuckyBeings" },
+{ text: "You are capable of amazing things; believe in yourself.", author: "LuckyBeings" },
+{ text: "Positivity attracts abundance and joy into your life.", author: "LuckyBeings" },
+{ text: "Trust the journey, even when you don’t understand it.", author: "LuckyBeings" },
+{ text: "You have the power to create a life full of happiness and peace.", author: "LuckyBeings" },
+{ text: "Every day is a new beginning, filled with limitless possibilities.", author: "LuckyBeings" },
+{ text: "Radiate love, and it will return to you in countless ways.", author: "LuckyBeings" },
+{ text: "Believe in your dreams and work towards them with passion.", author: "LuckyBeings" },
+{ text: "Let go of what you cannot control and find peace in the present.", author: "LuckyBeings" },
+{ text: "Your potential is boundless; rise above doubts and shine.", author: "LuckyBeings" }
+];
+
+        function displayRandomQuote() {
+            const randomIndex = Math.floor(Math.random() * quotes.length);
+            const quote = quotes[randomIndex];
+            document.getElementById("quote").textContent = `"${quote.text}"`;
+            document.getElementById("author").textContent = `@ ${quote.author}`;
+        }
+
+        displayRandomQuote();
+    </script>
+</body>
+</html>
